@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inicio | Equalyz AI</title>
+    <title>Inicio | Equalyz</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
@@ -13,18 +13,26 @@
 <body>
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand brand" href="index.html">Equalyz<small>Market Intelligence</small></a>
-            <button class="navbar-toggler border-secondary" data-bs-toggle="collapse" data-bs-target="#m"
-                aria-label="Menú"><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand brand" href="./index.html"><span class="brand-n">Equalyz</span><small>Market
+                    Intelligence</small></a>
+            <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#m"
+                aria-controls="m" aria-expanded="false" aria-label="Menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="m">
                 <ul class="navbar-nav me-auto ms-lg-3">
-                    <li><a class="nav-link active" href="index.html">Inicio</a></li>
-                    <li><a class="nav-link " href="comparador.html">Comparador inteligente</a></li>
-                    <li><a class="nav-link" href="emprendedor.html">Emprendedor B2B</a></li>
-                    <li><a class="nav-link " href="comunidad.html">Comunidad</a></li>
-                    <li><a class="nav-link" href="#">Alertas</a></li>
+                    <li><a class="nav-link active" href="./index.html">Inicio</a></li>
+                    <li><a class="nav-link" href="./paginas/comparador.html">Comparador inteligente</a></li>
+                    <li id="navEmp" class="d-none">
+                        <a class="nav-link" href="./paginas/emprendedor.html">Emprendedor B2B</a>
+                    </li>
+                    <li><a class="nav-link" href="./paginas/comunidad.html">Comunidad</a></li>
+                    <li><a class="nav-link" href="./paginas/conectar.html">Conectar</a></li>
+                    <li><a class="nav-link" href="./paginas/alertas.html">Alertas</a></li>
+                    <li><a class=" nav-link" href="./paginas/perfil.html">Ir a mi perfil</a></li>
                 </ul>
-                <span class="tag">COP</span>
+                <span id="authBox"></span><button id="tema" class="btn btn-out btn-sm me-2" type="button">☀ Modo
+                    claro</button><span class="tag">COP</span>
             </div>
         </div>
     </nav>
@@ -32,83 +40,79 @@
         <span class="tag ac">Transparencia de costo en tiempo real</span>
         <h1 class="hero-t mt-3">Compara el costo real.</h1>
         <p class="mu">Fletes, aranceles e impuestos sin sorpresas.</p>
-        <div class="card-eq">
+        <div class="card-eq" id="buscar-box">
             <div class="row g-2">
-                <div class="col-md"><input class="form-control inp"
-                        placeholder="Pega enlace o busca producto: Sony WH-1000XM5, iPhone 16 Pro…"
-                        aria-label="Buscar producto"></div>
-                <div class="col-md-auto"><button class="btn btn-ac w-100">Comparar ofertas</button></div>
+                <div class="col-md"><input id="url" class="form-control inp"
+                        placeholder="Pega el enlace de un producto (Amazon, Mercado Libre, Éxito…)"
+                        aria-label="URL del producto"></div>
+                <button id="buscar" type="button" class="btn btn-ac w-100">Agregar URL</button>
             </div>
-            <div class="mu small mt-2">Tiendas frecuentes: Amazon USA · Mercado Libre · Éxito Colombia · AliExpress
+            <p id="err" class="er small mt-2 mb-0 d-none">Escribe una URL válida, por ejemplo https://www.amazon.com/…
+            </p>
+            <div id="lista"></div>
+            <div id="pregunta" class="cta mt-3 d-none"><b>¿Tienes otra URL para añadir o quieres una recomendación
+                    personalizada?</b>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                    <button id="otra" class="btn btn-out btn-sm">Añadir otra URL</button>
+                    <button id="reco" class="btn btn-ac btn-sm">Recomendación personalizada</button>
+                    <a href="./paginas/comparador.html" class="btn btn-out btn-sm">Ir al comparador</a>
+                </div>
             </div>
         </div>
-        <div class="row g-2 mt-2">
-            <div class="col-md-4">
-                <div class="card-eq small">Liquidación de aranceles exacta</div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-eq small">Garantía local verificada</div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-eq small">Tiempo de entrega real</div>
-            </div>
-        </div>
-        <div class="row g-2 mt-3 stat">
-            <div class="col-6 col-md-3">
-                <div class="card-eq"><span class="mu small">Ahorro medio</span><b class="ok">18%+</b></div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="card-eq"><span class="mu small">Sin spam</span><b>100%</b></div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="card-eq"><span class="mu small">Tiendas</span><b>48+</b></div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="card-eq"><span class="mu small">Actualización</span><b>24h</b></div>
-            </div>
-        </div>
-        <section class="mt-5"><small class="ac">Comparativa destacada de la semana</small>
-            <h2 class="sec-t">Análisis Cara a Cara: Costo Real vs Flete</h2>
-            <div class="card-eq mt-3"><b>Sony WH-1000XM5 Noise Cancelling</b> <span class="tag wa ms-2">Recomendado:
-                    Mercado Libre, entrega en 24h</span>
-                <div class="row g-3 mt-1">
-                    <div class="col-lg-6">
-                        <div class="card-eq h-100">
-                            <div class="d-flex justify-content-between"><b>Amazon USA (Importado)</b><span
-                                    class="mu">79/100</span></div>
-                            <div class="fs-4 fw-bold">$1.479.000 COP</div>
-                            <div class="mu small mb-2">Flete + aduana incluidos</div>
-                            <div class="bar"><i class="bg-warning" style="width:55%"></i></div>
-                            <div class="mu small mt-2">Tránsito: 5 a 14 días hábiles</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card-eq best h-100">
-                            <div class="d-flex justify-content-between"><b>Mercado Libre Colombia</b><span
-                                    class="ok">94/100</span></div>
-                            <div class="fs-4 fw-bold">$1.489.000 COP</div>
-                            <div class="mu small mb-2">Precio final garantizado</div>
-                            <div class="bar"><i class="bg-success" style="width:94%"></i></div>
-                            <div class="mu small mt-2">Entrega en 24h · Garantía local</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex flex-wrap justify-content-between align-items-center mt-3"><span
-                        class="mu small">Diferencia: +$10.000 COP</span><a href="comparador.html"
-                        class="btn btn-out btn-sm">Ver análisis completo</a></div>
-            </div>
-        </section>
-        <section class="mt-5 text-center">
-            <h2 class="sec-t">Cómo se calcula tu costo exacto en 3 pasos</h2>
-            <div class="row g-2 mt-2 text-start">
-                <div class="col-md-4">
-                    <div class="card-eq"><b>1. Pega el enlace</b></div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card-eq"><b>2. Calculamos costos</b></div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card-eq"><b>3. Ahorra seguro</b></div>
+        <section id="analisis" class="mt-5">
+            <h2 class="sec-t">Análisis de mercados: ¿cuál es más confiable?</h2>
+            <p class="mu small">Datos de demostración basados en la comunidad Equalyz.</p>
+            <div class="card-eq">
+                <div class="table-responsive">
+                    <table class="table table-eq align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>MERCADO</th>
+                                <th style="min-width:160px">CONFIABILIDAD</th>
+                                <th>ENTREGA</th>
+                                <th>GARANTÍA LOCAL</th>
+                                <th>FACTURA DIAN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Mercado Libre</b> <span class="tag ok">Más confiable</span></td>
+                                <td><b class="ok">96%</b>
+                                    <div class="bar"><i class="bg-success" style="width:96%"></i></div>
+                                </td>
+                                <td>1,7 días</td>
+                                <td>Sí</td>
+                                <td>Sí</td>
+                            </tr>
+                            <tr>
+                                <td><b>Amazon</b></td>
+                                <td><b class="wa">84%</b>
+                                    <div class="bar"><i class="bg-warning" style="width:84%"></i></div>
+                                </td>
+                                <td>7,4 días</td>
+                                <td>No</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td><b>Éxito</b></td>
+                                <td><b class="wa">81%</b>
+                                    <div class="bar"><i class="bg-warning" style="width:81%"></i></div>
+                                </td>
+                                <td>3,2 días</td>
+                                <td>Sí</td>
+                                <td>Sí</td>
+                            </tr>
+                            <tr>
+                                <td><b>AliExpress</b></td>
+                                <td><b class="er">66%</b>
+                                    <div class="bar"><i class="bg-danger" style="width:66%"></i></div>
+                                </td>
+                                <td>22 días</td>
+                                <td>No</td>
+                                <td>No</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -117,30 +121,44 @@
             <div class="row g-3 mt-1">
                 <div class="col-6 col-lg-3">
                     <div class="card-eq h-100">
-                        <div class="img-ph mb-2" style="height:90px"></div><span class="tag ok float-end">Hasta
-                            -23%</span><b>Tecnología & Audio</b>
-                        <div class="mu small mt-2">Diferencial típico: $190.000 COP</div>
+                        <div class="emo mb-2" role="img" aria-label="Tecnología y audio">💻</div><b>Tecnología y
+                            audio</b>
+                        <div class="d-grid gap-1 mt-2"><a class="btn btn-out btn-sm"
+                                href="https://listado.mercadolibre.com.co/audifonos" target="_blank" rel="noopener">Ver
+                                en Mercado Libre</a><a class="btn btn-out btn-sm"
+                                href="https://www.amazon.com/s?k=headphones" target="_blank" rel="noopener">Ver en
+                                Amazon</a></div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3">
                     <div class="card-eq h-100">
-                        <div class="img-ph mb-2" style="height:90px"></div><span class="tag ok float-end">Hasta
-                            -18%</span><b>Fotografía & Video</b>
-                        <div class="mu small mt-2">Diferencial típico: $450.000 COP</div>
+                        <div class="emo mb-2" role="img" aria-label="Fotografía y video">📷</div><b>Fotografía y
+                            video</b>
+                        <div class="d-grid gap-1 mt-2"><a class="btn btn-out btn-sm"
+                                href="https://listado.mercadolibre.com.co/camaras-fotograficas" target="_blank"
+                                rel="noopener">Ver en Mercado Libre</a><a class="btn btn-out btn-sm"
+                                href="https://www.amazon.com/s?k=mirrorless+camera" target="_blank" rel="noopener">Ver
+                                en Amazon</a></div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3">
                     <div class="card-eq h-100">
-                        <div class="img-ph mb-2" style="height:90px"></div><span class="tag ok float-end">Hasta
-                            -19%</span><b>Laptops & Oficina</b>
-                        <div class="mu small mt-2">Diferencial típico: $325.000 COP</div>
+                        <div class="emo mb-2" role="img" aria-label="Laptops y oficina">🖥️</div><b>Laptops y
+                            oficina</b>
+                        <div class="d-grid gap-1 mt-2"><a class="btn btn-out btn-sm"
+                                href="https://www.exito.com/s?q=portatil" target="_blank" rel="noopener">Ver en
+                                Éxito</a><a class="btn btn-out btn-sm" href="https://www.amazon.com/s?k=laptop"
+                                target="_blank" rel="noopener">Ver en Amazon</a></div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3">
                     <div class="card-eq h-100">
-                        <div class="img-ph mb-2" style="height:90px"></div><span class="tag ok float-end">Hasta
-                            -12%</span><b>Moda & Accesorios</b>
-                        <div class="mu small mt-2">Diferencial típico: $150.000 COP</div>
+                        <div class="emo mb-2" role="img" aria-label="Moda y accesorios">👟</div><b>Moda y accesorios</b>
+                        <div class="d-grid gap-1 mt-2"><a class="btn btn-out btn-sm"
+                                href="https://www.falabella.com.co/falabella-co/search?Ntt=zapatillas" target="_blank"
+                                rel="noopener">Ver en Falabella</a><a class="btn btn-out btn-sm"
+                                href="https://listado.mercadolibre.com.co/zapatillas" target="_blank" rel="noopener">Ver
+                                en Mercado Libre</a></div>
                     </div>
                 </div>
             </div>
@@ -150,16 +168,45 @@
                 <h2 class="sec-t mb-1">Compara sin costo oculto</h2><span class="mu">Descubre aranceles y fletes reales
                     antes de pagar.</span>
             </div>
-            <div class="d-flex gap-2"><a href="comparador.html" class="btn btn-ac">Comparar ahora</a><a href="#"
-                    class="btn btn-out">Crear alerta de precio</a></div>
+            <div class="d-flex gap-2"><a href="./paginas/comparador.html" class="btn btn-ac">Comparar ahora</a><button
+                    id="alertaBtn" class="btn btn-out">Crear alerta de precio</button></div>
         </div>
     </main>
+    <div class="modal fade" id="mReco" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content p-3">
+                <h2 class="fs-5 fw-bold">Recomendación personalizada</h2><label class="mu small" for="prio">¿Qué te
+                    importa más?</label><select id="prio" class="form-select inp mb-3">
+                    <option value="conf">Confiabilidad</option>
+                    <option value="rap">Rapidez de entrega</option>
+                    <option value="gar">Garantía local</option>
+                </select>
+                <div id="recoOut"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="mAlerta" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content p-3">
+                <h2 class="fs-5 fw-bold">Crear alerta de precio</h2>
+                <input id="alUrl" class="form-control inp mb-2" placeholder="URL del producto" aria-label="URL"><input
+                    id="alPrecio" type="number" class="form-control inp mb-2" placeholder="Avísame si baja de (COP)"
+                    aria-label="Precio objetivo"><input id="alMail" type="email" class="form-control inp mb-2"
+                    placeholder="Correo (opcional)" aria-label="Correo">
+                <p id="alErr" class="er small d-none">Escribe una URL válida y un precio mayor que 0.</p><button
+                    id="alGuardar" class="btn btn-ac mb-3">Guardar alerta</button><b class="small">Mis alertas</b>
+                <div id="alOut"></div>
+            </div>
+        </div>
+    </div>
     <footer class="py-4 mt-5">
-        <div class="container d-flex flex-wrap justify-content-between gap-2"><span><b class="text-white">Equalyz</b> —
+        <div class="container d-flex flex-wrap justify-content-between gap-2"><span><b class="brand-n">Equalyz</b> —
                 Inteligencia Competitiva B2B</span><span>Plataforma · Precios B2B · Ecosistema</span><span>© 2026
                 Equalyz Inc.</span></div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./JS/tema.js"></script>
+    <script src="./JS/app.js"></script>
 </body>
 
 </html>

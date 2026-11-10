@@ -17,8 +17,3 @@ Funcionalidades principales:
 Transparencia: diferenciar siempre dato verificado, dato estimado, dato no disponible y opinión
 de usuario. La falta de información es incertidumbre, no una mala calificación. Los datos de
 demostración se rotulan "Dato de ejemplo".
-
-Estilo: sobrio, moderno, minimalista. Paleta Coolors: #03071E, #370617, #6A040F, #9D0208,
-#D00000, #DC2F02, #E85D04, #F48C06, #FAA307, #FFBA08. Botones mates, neutros y sin brillo,
-con mucho espacio entre secciones. Sin mensajes de "100% gratuita" ni menciones a inteligencia
-artificial en la interfaz. Accesible: buen contraste y no depender solo del color.

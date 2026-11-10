@@ -1,14 +1,42 @@
-:root {
+:root,
+[data-bs-theme=dark] {
     --bg: #0a0e1f;
     --sf: #111833;
     --sf2: #16203f;
     --bd: #243052;
-    --ac: #e8400c;
+    --ac: #ff5a24;
     --tx: #e8ecf5;
+    --hi: #fff;
     --mu: #8b95b0;
     --ok: #22c55e;
     --wa: #f59e0b;
-    --er: #ef4444
+    --er: #ef4444;
+    --nav: #0d1328;
+    --c1: #5a0e0e;
+    --c2: #2a0a14;
+    --cbd: #6b1a1a;
+    --i1: #1b2548;
+    --i2: #3b2410
+}
+
+[data-bs-theme=light] {
+    --bg: #f3f5fb;
+    --sf: #fff;
+    --sf2: #eaeef7;
+    --bd: #d3d9e8;
+    --ac: #d4380a;
+    --tx: #141b30;
+    --hi: #0a0e1f;
+    --mu: #566079;
+    --ok: #15803d;
+    --wa: #b45309;
+    --er: #dc2626;
+    --nav: #fff;
+    --c1: #fde4de;
+    --c2: #fff0e2;
+    --cbd: #f1b4a4;
+    --i1: #dfe6f7;
+    --i2: #fbdcc4
 }
 
 body {
@@ -23,7 +51,7 @@ a {
 }
 
 .navbar {
-    background: #0d1328;
+    background: var(--nav);
     border-bottom: 1px solid var(--bd)
 }
 
@@ -33,12 +61,15 @@ a {
 
 .navbar .nav-link.active,
 .navbar .nav-link:hover {
-    color: #fff
+    color: var(--hi)
+}
+
+[data-bs-theme=dark] .navbar-toggler-icon {
+    filter: invert(1)
 }
 
 .brand {
-    font-weight: 800;
-    color: #fff
+    line-height: 1.1
 }
 
 .brand small {
@@ -46,6 +77,15 @@ a {
     font-size: .6rem;
     color: var(--mu);
     font-weight: 400
+}
+
+.brand-n {
+    font-weight: 800;
+    font-size: 1.3rem;
+    background: linear-gradient(90deg, var(--ac), var(--wa));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
 }
 
 .btn-ac {
@@ -68,7 +108,7 @@ a {
 
 .btn-out:hover {
     background: var(--sf2);
-    color: #fff
+    color: var(--hi)
 }
 
 .card-eq {
@@ -112,15 +152,23 @@ a {
 }
 
 .tag.ok {
-    border-color: var(--ok)
+    border-color: var(--ok);
+    color: var(--ok)
 }
 
 .tag.er {
-    border-color: var(--er)
+    border-color: var(--er);
+    color: var(--er)
 }
 
 .tag.wa {
-    border-color: var(--wa)
+    border-color: var(--wa);
+    color: var(--wa)
+}
+
+.tag.ac {
+    border-color: var(--ac);
+    color: var(--ac)
 }
 
 .inp {
@@ -131,13 +179,13 @@ a {
 
 .inp:focus {
     background: var(--sf);
-    color: #fff;
+    color: var(--tx);
     border-color: var(--ac);
-    box-shadow: none
+    box-shadow: none;
 }
 
 .inp::placeholder {
-    color: #5d6788
+    color: var(--mu)
 }
 
 .stat b {
@@ -158,7 +206,7 @@ a {
 .img-ph {
     height: 170px;
     border-radius: .5rem;
-    background: linear-gradient(135deg, #1b2548, #2a1a1a 60%, #3b2410)
+    background: linear-gradient(135deg, var(--i1), var(--i2))
 }
 
 .bar {
@@ -174,8 +222,8 @@ a {
 }
 
 .cta {
-    background: linear-gradient(90deg, #5a0e0e, #2a0a14);
-    border: 1px solid #6b1a1a;
+    background: linear-gradient(90deg, var(--c1), var(--c2));
+    border: 1px solid var(--cbd);
     border-radius: .6rem;
     padding: 1.5rem
 }
@@ -222,5 +270,83 @@ footer {
     height: 6.5rem;
     font-size: 2rem;
     background: rgba(34, 197, 94, .16);
-    box-shadow: 0 0 0 6px rgba(34, 197, 94, .15), 0 0 24px rgba(34, 197, 94, .4)
+    box-shadow: none;
+    border-width: 6px
+}
+
+.chip {
+    display: inline-flex;
+    gap: .4rem;
+    align-items: center;
+    background: var(--sf2);
+    border: 1px solid var(--bd);
+    border-radius: 2rem;
+    padding: .2rem .4rem .2rem .8rem;
+    margin: .2rem .3rem 0 0;
+    font-size: .8rem
+}
+
+.chip button {
+    border: 0;
+    background: none;
+    color: var(--mu)
+}
+
+.emo {
+    height: 90px;
+    border-radius: .5rem;
+    display: grid;
+    place-items: center;
+    font-size: 2.6rem;
+    background: linear-gradient(135deg, var(--i1), var(--i2))
+}
+
+.modal-content {
+    background: var(--sf);
+    color: var(--tx);
+    border: 1px solid var(--bd)
+}
+
+/* Puntuaciones del comparador */
+.score-high {
+    color: var(--ok);
+}
+
+.score-medium {
+    color: var(--wa);
+}
+
+.score-low {
+    color: var(--er);
+}
+
+.score-na {
+    color: var(--mu);
+}
+
+/* Imagen de perfil */
+.profile-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--sf2);
+    color: var(--ac);
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+/* Tarjeta de acceso */
+.access-card {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
